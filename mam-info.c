@@ -206,9 +206,7 @@ int main(int argc, char * argv[])
         }
 */
         if(att_read(sg_fd, medium.barcode, MAM_ATT_BARCODE, 12, MAM_TYPE_ASCII) < 0) {
-                printf("ERROR : Read failed (try verbose opt)\n");
-                close(sg_fd);
-                return -1;
+                medium.barcode[0] = '\0';
         }
 /*
         if(att_read(sg_fd, medium.identifier, MAM_ATT_IDENTIFIER, 12, MAM_TYPE_ASCII) < 0) {
